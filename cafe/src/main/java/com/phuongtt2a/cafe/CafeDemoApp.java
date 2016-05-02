@@ -3,6 +3,7 @@ package com.phuongtt2a.cafe;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.util.Assert;
 
 import com.phuongtt2a.cafe.beans.Delivery;
@@ -13,9 +14,11 @@ import com.phuongtt2a.cafe.beans.OrderItem;
 
 public class CafeDemoApp {
 
+	private static Logger logger = Logger.getLogger(CafeDemoApp.class);
+	
 	public static void main(String[] args) {
-		for (int i = 0; i <= 100; i++) {
-			Order order = new Order();
+		for (int i = 1; i <= 100; i++) {
+			Order order = new Order(i);
 			order.addItem(DrinkType.LATTE, 2, false);
 			order.addItem(DrinkType.MOCHA, 3, true);
 			placeOrder(order);
@@ -32,7 +35,10 @@ public class CafeDemoApp {
 		final List<Drink> drinks = prepareDrinks(orderItems);
 		
 		// prepare delivery
-		return prepareDelivery(drinks);
+		final Delivery delivery = prepareDelivery(drinks);
+		logger.info(delivery);
+		
+		return delivery;
 	}
 	
 	private static List<Drink> prepareDrinks(final List<OrderItem> orderItems) {
