@@ -1,7 +1,9 @@
 Café Sample Application - Traditional programming model
 ================================================
 
-The purpose of the Café sample application is to demonstrate the order-delivery scenario in a real life cafe. With this application, we handle several drink orders - hot and iced. After running the application we can see in the standard output (console) how cold drinks and hot drinks are prepared (cold drinks are prepared quicker
+The purpose of the Café sample application is to demonstrate the order-delivery scenario in a real life cafe. With this application, we handle several drink orders - hot and iced (an order may contain multiple order items). The Barista prepares each drink, but hot and cold drink preparation are handled by two distinct processes. The prepared drinks are then sent to the Waiter where they are aggregated into a delivery. 
+
+After running the application we can see in the standard output (console) how cold drinks and hot drinks are prepared (cold drinks are prepared quicker
 than hot). However the delivery for the whole order is postponed until the hot drink is ready.
 
 	                                                              _____________ 
