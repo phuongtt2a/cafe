@@ -3,7 +3,7 @@ Café Sample Application - Traditional programming model
 	                                                              _____________ 
 	                                                     -{ice}->| Iced Drink  |
 	                         -> Item 1 -{check ice/hot}-         |             |
-	Order -> Items -{split}-                             -{hot}->| Hot Drink   |-{aggregate}-> List of ordered drinks -{deliver by a water}->.  
+	Order -> Items -{split}-                             -{hot}->| Hot Drink   |-{aggregate}-> List of ordered drinks -{deliver by a water}-> customer  
 	                         -> ...                              |             | 
 	                                                             |             |
 	                                                             |_____________| 
